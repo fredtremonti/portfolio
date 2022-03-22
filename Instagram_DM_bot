@@ -1,0 +1,69 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+from random import randint
+
+PATH = r"C:\chromedriver_new.exe"
+driver = webdriver.Chrome(PATH)
+
+def log_in(username, password):
+    try:
+        #Accessing Instagram and making it wait 1-4s (assigned randomly)
+        driver.get("https://instagram.com")
+        time.sleep(randint(1, 4))
+        #Locating username and inputting the real username
+        username_location = driver.find_element_by_name("username")
+        username_location.send_keys(username)
+        time.sleep(randint(2, 4))
+        #Locating password, inputting the real password, and hitting enter
+        password_location = driver.find_element_by_name("password")
+        password_location.send_keys(password)
+        time.sleep(randint(1, 3))
+        password_location.send_keys(Keys.ENTER)
+        time.sleep(randint(2, 4))
+    except Exception:
+        print(Exception)
+
+def auto_dm(accounts, full_names, message):
+    try:
+        # Opening dm
+        dm_button = driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[2]/a")
+        time.sleep(randint(2, 4))
+        dm_button.click()
+        time.sleep(randint(2, 5))
+        notifications_off_button = driver.find_element_by_xpath("/html/body/div[6]/div/div/div/div[3]/button[2]")
+        notifications_off_button.click()
+        time.sleep(randint(2, 4))
+        i = 0
+        for account in accounts:
+            dm = driver.find_element_by_xpath("/html/body/div[1]/section/div/div[2]/div/div/div[1]/div[1]/div/div[3]")
+            dm.click()
+            time.sleep(randint(2, 4))
+            username_input_location = driver.find_element_by_xpath("/html/body/div[6]/div/div/div[2]/div[1]/div/div[2]/input")
+            username_input_location.send_keys(account)
+            time.sleep(randint(2, 4))
+            toggle_selection = driver.find_element_by_xpath("/html/body/div[6]/div/div/div[2]/div[2]/div[1]")
+            toggle_selection.click()
+            time.sleep(randint(2, 4))
+            next_button = driver.find_element_by_xpath("/html/body/div[6]/div/div/div[1]/div/div[2]/div/button/div")
+            next_button.click()
+            time.sleep(randint(2, 4))
+            message_box = driver.find_element_by_xpath("/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea")
+            message_box.send_keys(f"Hi, {full_names[i]}! {str(message)}")
+            time.sleep(randint(1, 3))
+            message_box.send_keys(Keys.ENTER)
+            i += 1
+        driver.quit()
+    except Exception as err:
+        print(err)
+
+
+my_username = #insert your username as a string here
+my_password = #insert your password as a string here
+
+list_of_accounts = #list of usernmanes e.g., ["mosalah", "richarlison", "thiagosilva"]
+list_of_fullnames = #list of names to send customized message e.g., ["Salah", "Richarlison", "Thiago Silva"]
+my_message = #insert a list with message(s) e.g., ["You are a great player!"]
+
+log_in(my_username, my_password)
+auto_dm(list_of_accounts, list_of_fullnames, my_message)
