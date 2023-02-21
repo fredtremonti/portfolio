@@ -1,0 +1,22 @@
+,RAND State-Level Firearm Ownership Database
+,"Version 1.0 April 1, 2020"
+,Developed by the RAND Corporation
+,
+,"This file contains estimates of  the proportion of adult, noninstitutionalized residents in each U.S. state and year (1980–2016) who live in a household with a firearm, as well as the data used to produce these estimates. This file supplements the document State-Level Estimates of Household Firearm Ownership, by Terry L. Schell, Samuel Peterson, Brian G. Vegetabile, Adam Scherling, Rosanna Smart, and Andrew R. Morral. Estimates of household firearm ownership rates were constructed using a structural equation model,   as described in the document, which can be accessed for free at https://www.rand.org/pubs/tools/TL354.html. 
+
+This file includes only the final variables that were used in the structural equation model in their final form. Estimates of the household firearm ownership rate (HFR) and associated data are available in the ""State-Level Data & Factor Score"" tab. The ""Variable Description"" tab contains explanations of these variables and any transformations that were made. The ""Data Source Citations"" tab contains citations for the various data sources used in this project"
+,"Background
+The RAND Corporation launched the Gun Policy in America initiative in January 2016 with the goal of creating objective, factual resources for policymakers and the public on the effects of gun policies. Researchers studying this topic are often interested in the effect of policies on rates of firearm ownership or how those rates are associated with a range of important outcomes. One particular challenge for researchers in this area is that direct measures of state-level firearm ownership exist only for a few years (2001–2004). Proxy measures of firearm ownership do exist longitudinally but are limited in a variety of ways. Therefore, as part of the Gun Policy in America initiative, RAND researchers developed a longitudinal database of state-level estimates of household firearm ownership that is free to the public. This document describes the methods that the researchers used to construct the estimates and provides technical documentation and other information that will facilitate use of the database. "
+,"This RAND State-Level Firearm Ownership Database is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/. Any rights in individual contents of the database are licensed under the Database Contents License: http://opendatacommons.org/licenses/dbcl/1.0/  
+
+The RAND Corporation is a research organization that develops solutions to public policy challenges to help make communities throughout the world safer and more secure, healthier and more prosperous. RAND is nonprofit, nonpartisan, and committed to the public interest."
+,Public release data notes
+,"Estimates of household firearm ownership rates are found in the field labeled ""HFR."" Approximate standard errors for these estimates appear in the field labeled ""HFR_se."" The standard errors are computed under strong assumptions and are likely to underestimate error. Specifically, they assume the errors in the data are IID (independent and identically distributed) across states and years. Although the standard errors for the actual model parameters are corrected for clustering, the standard errors for factor scores used to estimate household ownership rates are not. Because of this, the estimated standard errors of the factor scores vary over state and time only as a function of the data that are present versus missing for each state-year.
+
+Other fields in the ""State-Level Data & Factor Scores"" tab include all variables used in the structural equation model of household ownership rates, except that the authors have removed 92 data points from the field ""Fem_FS_S"" (the proportion of all suicides by women that were firearm suicides) because  the Centers for Disease Control and Prevention's WONDER data system, where the data were obtained, suppresses small values of suicides in its public release data sets to protect privacy.  "
+,
+,"Funding
+
+Funding for the Gun Policy in America initiative was originally provided through unrestricted gifts from RAND supporters and income from operations. Since June 2018, this initiative has been supported by a grant from Arnold Ventures. 
+
+To support RAND’s efforts and enable initiatives like the Gun Policy in America project, contact our Office of Development at (310) 393-0411, ext. 6901 or giving@rand.org."
